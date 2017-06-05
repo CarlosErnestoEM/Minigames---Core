@@ -13,7 +13,6 @@ import java.util.Calendar;
 
 public class PlayerUtils {
 
-
     public static Calendar cal = Calendar.getInstance();
     public static int dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
     public static int year = cal.get(Calendar.YEAR);
