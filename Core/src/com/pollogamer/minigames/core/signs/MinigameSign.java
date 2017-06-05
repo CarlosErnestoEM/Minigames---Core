@@ -1,20 +1,22 @@
 package com.pollogamer.minigames.core.signs;
 
+import org.apache.logging.log4j.core.config.plugins.PluginType;
 import org.bukkit.Location;
 
-public abstract class MinigameSign{
+import java.util.ArrayList;
+import java.util.List;
 
+public class MinigameSign{
+
+    public static List<MinigameSign> signs = new ArrayList<>();
     private Location location;
     private String name;
 
     public MinigameSign(Location location, String name) {
         this.location = location;
         this.name = name;
-        update();
+        signs.add(this);
     }
-
-    public abstract void update();
-
 
     public Location getLocation() {
         return location;

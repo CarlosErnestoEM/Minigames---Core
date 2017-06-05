@@ -1,8 +1,8 @@
 package com.pollogamer.minigames.poshosw.listener;
 
+import com.pollogamer.minigames.core.signs.MinigameSign;
 import com.pollogamer.minigames.poshosw.Principal;
 import com.pollogamer.minigames.poshosw.arena.SWArena;
-import com.pollogamer.minigames.poshosw.sign.SkyWarsSign;
 import com.pollogamer.minigames.poshosw.utils.ArenaUtils;
 import com.pollogamer.minigames.poshosw.utils.SignUtils;
 import org.bukkit.Material;
@@ -22,7 +22,7 @@ public class SignListener implements Listener{
         if(event.getPlayer().hasPermission("poshoskywars.sign.create")){
             if(event.getLine(0).equalsIgnoreCase("[SkyWars]")){
                 if(Principal.getPlugin().getArenaManager().getArena(event.getLine(1)) != null){
-                    new SkyWarsSign(event.getBlock().getLocation(),event.getLine(1));
+                    new MinigameSign(event.getBlock().getLocation(),event.getLine(1));
                     SignUtils.createSignBuildUHC(event.getLine(1),event.getBlock().getLocation());
                     event.getPlayer().sendMessage("Created sign for arena "+event.getLine(1));
                 }else{
@@ -39,7 +39,7 @@ public class SignListener implements Listener{
         if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
             if (e.getClickedBlock().getType() == Material.WALL_SIGN) {
                 Sign s = (Sign) e.getClickedBlock().getState();
-                SkyWarsSign sign = SignUtils.getSignArena(s.getLocation());
+                MinigameSign sign = SignUtils.getSignArena(s.getLocation());
                 if (sign != null) {
                     SWArena swArena = Principal.getPlugin().getArenaManager().getArena(p);
                     if(swArena == null){
@@ -54,10 +54,10 @@ public class SignListener implements Listener{
     public void onSignBreak(BlockBreakEvent event){
         Player p = event.getPlayer();
         if(event.getBlock().getType().equals(Material.SIGN)||event.getBlock().getType().equals(Material.SIGN_POST)||event.getBlock().getType().equals(Material.WALL_SIGN)){
-            SkyWarsSign sign = SignUtils.getSignArena(event.getBlock().getLocation());
+            MinigameSign sign = SignUtils.getSignArena(event.getBlock().getLocation());
             if(sign != null){
                 if(p.hasPermission("poshoskywars.sign.break")){
-                    SkyWarsSign.signs.remove(sign);
+                    MinigameSign.signs.remove(sign);
                     SignUtils.deleteSignBuildUHC(sign.getLocation(),sign.getName());
                     p.sendMessage("You delete sign for arena "+sign.getName());
                 }else{

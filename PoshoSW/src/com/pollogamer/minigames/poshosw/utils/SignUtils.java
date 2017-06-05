@@ -1,9 +1,8 @@
 package com.pollogamer.minigames.poshosw.utils;
 
-import com.pollogamer.minigames.core.objects.Config;
+import com.pollogamer.minigames.core.signs.MinigameSign;
 import com.pollogamer.minigames.core.utils.LocationUtils;
 import com.pollogamer.minigames.poshosw.config.ConfigManager;
-import com.pollogamer.minigames.poshosw.sign.SkyWarsSign;
 import org.bukkit.Location;
 
 public class SignUtils {
@@ -25,8 +24,8 @@ public class SignUtils {
             ConfigManager.signs.set("signs.locations."+(1),LocationUtils.serializeLoc(location)+","+name);
         }
     }
-    public static SkyWarsSign getSignArena(Location l){
-        for(SkyWarsSign buildUHCSign : SkyWarsSign.signs){
+    public static MinigameSign getSignArena(Location l){
+        for(MinigameSign buildUHCSign : MinigameSign.signs){
             if(l.equals(buildUHCSign.getLocation())){
                 return buildUHCSign;
             }
