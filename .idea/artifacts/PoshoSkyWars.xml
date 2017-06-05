@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PoshoSkyWars">
+    <output-path>$PROJECT_DIR$/out/artifacts/PoshoSkyWars</output-path>
+    <root id="archive" name="PoshoSkyWars.jar">
+      <element id="module-output" name="Minigames" />
+      <element id="module-output" name="Core" />
+      <element id="module-output" name="PoshoSW" />
+    </root>
+  </artifact>
+</component>

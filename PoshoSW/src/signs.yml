@@ -1,0 +1,14 @@
+################################
+#                              #
+#            Signs File        #
+################################
+
+#Variables %arena%, %players%, %state%
+
+signs:
+  line0: '&e&lSkyWars'
+  line1: '&cMap: &a%arena%'
+  line2: '&a%players%&f/&a%maxplayers%'
+  line3: '%state%'
+
+  locations:

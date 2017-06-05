@@ -1,0 +1,12 @@
+name: PoshoSkyWars
+version: 1.0
+main: com.pollogamer.minigames.poshosw.Principal
+author: PolloGamer
+description: The best SkyWars plugin Like Hypixel!
+commands:
+    sw:
+     description: Main skywars command
+     aliases: [sw, skywars]
+    sws:
+     description: Command for Setup
+     aliases: [sws, skywarssetup]
